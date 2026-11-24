@@ -7,56 +7,56 @@
       {
         "type": "image",
         "data": {
-          "image": "objectiveline1.png",
+          "image": "ddayobjective.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "DoomsDayCheck"
           },
           "anchorPoint": "TOP_CENTER",
-          "x": 91,
-          "y": 69,
+          "x": 33,
+          "y": 90,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "objectiveline2.png",
+          "image": "sddayobjective.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "SuperDoomsDayCheck"
           },
           "anchorPoint": "TOP_CENTER",
-          "x": 91,
-          "y": 69,
+          "x": 33,
+          "y": 90,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "objectiveline3.png",
+          "image": "theendobjective.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "TheEndCheck"
           },
           "anchorPoint": "TOP_CENTER",
-          "x": 91,
-          "y": 69,
+          "x": 33,
+          "y": 90,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "objectiveline4.png",
+          "image": "ewrathobjective.png",
           "use1Xscale": true,
           "displayCondition": {
             "name": "EngiesWrathCheck"
           },
           "anchorPoint": "TOP_CENTER",
-          "x": 91,
-          "y": 69,
+          "x": 33,
+          "y": 90,
           "locked": false
         }
       }

@@ -68,6 +68,12 @@ public class DoomsdayManualCleanupProcedure {
 		}
 		if (world instanceof ServerLevel _level)
 			_level.setDayTime((int) (EngiesChaosModVariables.MapVariables.get(world).timeticks + 11000));
+		EngiesChaosModVariables.MapVariables.get(world).forecasttoggle = false;
+		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		EngiesChaosModVariables.MapVariables.get(world).dohordedialogue = false;
+		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime = false;
+		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
 		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		EngiesChaosModVariables.MapVariables.get(world).EngiesWrathForceCreativePlayersAdventure = false;
@@ -186,7 +192,11 @@ public class DoomsdayManualCleanupProcedure {
 		world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
 		EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime = true;
 		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-		EngiesChaosModVariables.MapVariables.get(world).prophposition = 115;
+		EngiesChaosModVariables.MapVariables.get(world).doomsdayhordedialogue = 0;
+		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		EngiesChaosModVariables.MapVariables.get(world).forecasthordedialogue = 0;
+		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+		EngiesChaosModVariables.MapVariables.get(world).forecasthordedialoguetimer = 0;
 		EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 		EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = 0;
 		EngiesChaosModVariables.MapVariables.get(world).syncData(world);

@@ -9,7 +9,9 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameRules;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
@@ -102,10 +104,16 @@ public class DoomsdayCleanupProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 						EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-						EngiesChaosMod.queueServerWork(1, () -> {
-							BlizzardAnnoyanceProcedure.execute(world);
-						});
 						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							{
+								Entity _ent = entityiterator;
+								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+									_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+											_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "stopsound @s weather engies_chaos:blizzard");
+								}
+							}
+							if (entityiterator instanceof LivingEntity _entity)
+								_entity.removeEffect(MobEffects.DARKNESS);
 							{
 								Entity _ent = entityiterator;
 								if (!_ent.level.isClientSide() && _ent.getServer() != null) {
@@ -149,6 +157,12 @@ public class DoomsdayCleanupProcedure {
 					}
 					if (world instanceof ServerLevel _level)
 						_level.setDayTime((int) (EngiesChaosModVariables.MapVariables.get(world).timeticks + 11000));
+					EngiesChaosModVariables.MapVariables.get(world).forecasttoggle = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).dohordedialogue = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime = false;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).blizzard = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).EngiesWrathForceCreativePlayersAdventure = false;
@@ -267,7 +281,11 @@ public class DoomsdayCleanupProcedure {
 					world.getLevelData().getGameRules().getRule(GameRules.RULE_DAYLIGHT).set(true, world.getServer());
 					EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime = false;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					EngiesChaosModVariables.MapVariables.get(world).prophposition = 115;
+					EngiesChaosModVariables.MapVariables.get(world).doomsdayhordedialogue = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).forecasthordedialogue = 0;
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					EngiesChaosModVariables.MapVariables.get(world).forecasthordedialoguetimer = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					EngiesChaosModVariables.MapVariables.get(world).DDayAvalancheAmount = 0;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);

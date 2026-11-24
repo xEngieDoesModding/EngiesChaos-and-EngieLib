@@ -38,10 +38,14 @@ public class ProphecyTickProcedure {
 				EngiesChaosModVariables.MapVariables.get(world).ProphecyTimerTotal = 0;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 			}
-			if (EngiesChaosModVariables.MapVariables.get(world).ProphecyTimerTotal >= 12.5) {
-				EngiesChaosModVariables.MapVariables.get(world).ddaystoptimer = false;
+			if (EngiesChaosModVariables.MapVariables.get(world).ProphecyTimerTotal >= 9 + 6.5) {
+				EngiesChaosModVariables.MapVariables.get(world).forecasthordedialoguetimer = 5;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				EngiesChaosModVariables.MapVariables.get(world).hordespawnstoggle = true;
+				EngiesChaosModVariables.MapVariables.get(world).dohordedialogue = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).pausedialogue = false;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				EngiesChaosModVariables.MapVariables.get(world).forecasttoggle = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				EngiesChaosModVariables.MapVariables.get(world).prophallowticking = false;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -357,30 +361,38 @@ public class ProphecyTickProcedure {
 						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 					}
 				}
+				if (EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime == false) {
+					if (EngiesChaosModVariables.MapVariables.get(world).ProphecyShowTimer < 0.5) {
+						EngiesChaosModVariables.MapVariables.get(world).prophposition = EngiesChaosModVariables.MapVariables.get(world).prophposition - 7.5;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (EngiesChaosModVariables.MapVariables.get(world).prophposition < 40) {
+							EngiesChaosModVariables.MapVariables.get(world).prophposition = 40;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+						if (EngiesChaosModVariables.MapVariables.get(world).prophposition <= 40) {
+							EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime = true;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					}
+				} else if (EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime == true) {
+					if (EngiesChaosModVariables.MapVariables.get(world).ProphecyShowTimer < 0.25) {
+						EngiesChaosModVariables.MapVariables.get(world).prophposition = EngiesChaosModVariables.MapVariables.get(world).prophposition + 32;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (EngiesChaosModVariables.MapVariables.get(world).prophposition > 40) {
+							EngiesChaosModVariables.MapVariables.get(world).prophposition = 40;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					} else if (EngiesChaosModVariables.MapVariables.get(world).ProphecyShowTimer >= 8.75) {
+						EngiesChaosModVariables.MapVariables.get(world).prophposition = EngiesChaosModVariables.MapVariables.get(world).prophposition - 16;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						if (EngiesChaosModVariables.MapVariables.get(world).prophposition < -75) {
+							EngiesChaosModVariables.MapVariables.get(world).prophposition = -75;
+							EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+						}
+					}
+				}
 				if (EngiesChaosModVariables.MapVariables.get(world).ProphecyShowTimer >= 9) {
 					EngiesChaosModVariables.MapVariables.get(world).ddayprophshow = false;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-				}
-				if (EngiesChaosModVariables.MapVariables.get(world).ProphecyShowTimer < 0.5 && EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime == false) {
-					EngiesChaosModVariables.MapVariables.get(world).prophposition = EngiesChaosModVariables.MapVariables.get(world).prophposition - 15;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).prophposition < 40) {
-						EngiesChaosModVariables.MapVariables.get(world).prophposition = 40;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-					if (EngiesChaosModVariables.MapVariables.get(world).prophposition <= 40) {
-						EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime = true;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ProphecyShowTimer < 0.25 && EngiesChaosModVariables.MapVariables.get(world).prophshowedupfirsttime == true) {
-					EngiesChaosModVariables.MapVariables.get(world).prophposition = EngiesChaosModVariables.MapVariables.get(world).prophposition + 23;
-					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					if (EngiesChaosModVariables.MapVariables.get(world).prophposition > 40) {
-						EngiesChaosModVariables.MapVariables.get(world).prophposition = 40;
-						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
-					}
-				} else if (EngiesChaosModVariables.MapVariables.get(world).ProphecyShowTimer >= 8.75) {
-					EngiesChaosModVariables.MapVariables.get(world).prophposition = EngiesChaosModVariables.MapVariables.get(world).prophposition - 23;
 					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
 				}
 			} else {

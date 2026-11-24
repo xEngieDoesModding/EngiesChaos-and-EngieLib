@@ -42,6 +42,6 @@ public class EngiesTrueBlessingEnchantment extends Enchantment {
 
 	@Override
 	protected boolean checkCompatibility(Enchantment enchantment) {
-		return super.checkCompatibility(enchantment) && !List.of(Enchantments.BLOCK_EFFICIENCY).contains(enchantment);
+		return super.checkCompatibility(enchantment) && !List.of(Enchantments.BINDING_CURSE, Enchantments.VANISHING_CURSE, Enchantments.INFINITY_ARROWS, Enchantments.RIPTIDE, Enchantments.SILK_TOUCH).contains(enchantment);
 	}
 }

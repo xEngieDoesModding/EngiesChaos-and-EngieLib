@@ -32,6 +32,16 @@ import engiegames.engies_chaos.procedures.EngiesWrathDialogueForecastDisplay4Pro
 import engiegames.engies_chaos.procedures.EngiesWrathDialogueForecastDisplay3Procedure;
 import engiegames.engies_chaos.procedures.EngiesWrathDialogueForecastDisplay2Procedure;
 import engiegames.engies_chaos.procedures.EngiesWrathDialogueForecastDisplay1Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplayVar7Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplayVar6Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplayVar5Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplayVar4Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplayVar3Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplayVar2Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplayVar1Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplay4Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplay2Procedure;
+import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastHordeDisplay1Procedure;
 import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastDisplay4Procedure;
 import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastDisplay3Procedure;
 import engiegames.engies_chaos.procedures.DoomsdayDialogueForecastDisplay2Procedure;
@@ -149,6 +159,46 @@ public class ForecastOverlay {
 			}
 			if (EngiesWrathDialogueForecastDisplay5Procedure.execute(world)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/newforecastengieswrathdialogue5.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplay1Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue1.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplay2Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue2.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplayVar1Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue3var1.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplayVar2Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue3var2.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplayVar3Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue3var3.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplayVar4Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue3var4.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplayVar5Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue3var5.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplayVar6Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue3var6.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplayVar7Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue3var7.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
+			}
+			if (DoomsdayDialogueForecastHordeDisplay4Procedure.execute(world)) {
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/mobhordedialogue4.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 40, 0, 0, 352, 50, 352, 50);
 			}
 		}

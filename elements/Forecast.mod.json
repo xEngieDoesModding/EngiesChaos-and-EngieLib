@@ -308,6 +308,146 @@
           "y": 40,
           "locked": false
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplay1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplay2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue3var1.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplayVar1"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue3var2.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplayVar2"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue3var3.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplayVar3"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue3var4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplayVar4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue3var5.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplayVar5"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue3var6.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplayVar6"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue3var7.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplayVar7"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mobhordedialogue4.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "DoomsdayDialogueForecastHordeDisplay4"
+          },
+          "anchorPoint": "TOP_CENTER",
+          "x": 33,
+          "y": 40,
+          "locked": false
+        }
       }
     ],
     "baseTexture": "",

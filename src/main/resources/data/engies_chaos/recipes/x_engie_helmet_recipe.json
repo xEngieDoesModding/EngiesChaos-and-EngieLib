@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "engies_chaos:x_engie_upgrade_helmet"
+    "item": "engies_chaos:roughian_engie_gamess_helmet"
   },
   "addition": {
-    "item": "engies_chaos:roughian_engie_gamess_helmet"
+    "item": "engies_chaos:x_engie_upgrade_helmet"
   },
   "result": {
     "item": "engies_chaos:x_engie_helmet"

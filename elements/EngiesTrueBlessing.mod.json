@@ -10,7 +10,19 @@
     "damageModifier": 50,
     "incompatibleEnchantments": [
       {
-        "value": "#engies_chaos:blessing_not_allowed"
+        "value": "BINDING_CURSE"
+      },
+      {
+        "value": "VANISHING_CURSE"
+      },
+      {
+        "value": "INFINITY"
+      },
+      {
+        "value": "RIPTIDE"
+      },
+      {
+        "value": "SILK_TOUCH"
       }
     ],
     "supportedItems": [

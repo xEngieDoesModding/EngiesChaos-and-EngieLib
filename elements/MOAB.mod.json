@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "M.O.A.B",
     "mobLabel": "",
-    "mobModelName": "Modelmissilebombs",
-    "mobModelTexture": "moab.png",
+    "mobModelName": "Modelmissilebeam",
+    "mobModelTexture": "nothingness2.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -16,12 +16,20 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.0,
+      "name": "MOABScale"
     },
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelmissilebeam",
+        "texture": "moabbeam.png",
+        "disableHurtOverlay": false,
+        "glow": true
+      }
+    ],
     "animations": [],
     "modelWidth": 1.0,
     "modelHeight": 1.0,
@@ -76,12 +84,12 @@
     "xpAmount": 0,
     "waterMob": false,
     "breatheUnderwater": {
-      "fixedValue": false
-    },
-    "pushedByFluids": {
       "fixedValue": true
     },
-    "flyingMob": false,
+    "pushedByFluids": {
+      "fixedValue": false
+    },
+    "flyingMob": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "disableCollisions": true,
@@ -126,6 +134,13 @@
         "name": "MOABTimeBeforeExplosion",
         "type": "integer",
         "value": 320
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "ScaleMultiplier",
+        "type": "integer",
+        "value": 0
       }
     ],
     "onMobTickUpdate": {

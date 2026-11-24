@@ -16,10 +16,10 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:XEngieUpgradeHelmet"
+      "value": "CUSTOM:RoughianEngieGamess.helmet"
     },
     "smithingInputAdditionStack": {
-      "value": "CUSTOM:RoughianEngieGamess.helmet"
+      "value": "CUSTOM:XEngieUpgradeHelmet"
     },
     "smithingInputTemplateStack": {
       "value": ""

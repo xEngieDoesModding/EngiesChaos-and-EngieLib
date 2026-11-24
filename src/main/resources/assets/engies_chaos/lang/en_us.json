@@ -3022,5 +3022,17 @@
   "item.engies_chaos.cosmic_death_sharko_pickaxe": "Cosmic Death Sharko Pickaxe",
   "item.engies_chaos.cosmic_death_sharko_axe": "Cosmic Death Sharko Axe",
   "item.engies_chaos.cosmic_death_sharko_shovel": "Cosmic Death Sharko Shovel",
-  "item.engies_chaos.cosmic_death_sharko_hoe": "Cosmic Death Sharko Hoe"
+  "item.engies_chaos.cosmic_death_sharko_hoe": "Cosmic Death Sharko Hoe",
+  "death.attack.avalanche_ball_tick.player": "%1$s was frozen to death by an Avalanche Ball whilst trying to escape %2$s",
+  "death.attack.avalanche_ball_tick.item": "%1$s was killed by %2$s using %3$s",
+  "death.attack.avalanche_ball_tick": "%1$s was frozen to death by an Avalanche Ball",
+  "death.attack.dooms_lightning.player": "%1$s was struck down by Zeus whilst trying to escape %2$s",
+  "death.attack.dooms_lightning": "%1$s was struck down by Zeus.",
+  "death.attack.dooms_lightning.item": "%1$s was killed by %2$s using %3$s",
+  "death.attack.rift_ball_damage.player": "%1$s got too close to a Rift Ball whilst trying to escape %2$s",
+  "death.attack.rift_ball_damage.item": "%1$s was killed by %2$s using %3$s",
+  "death.attack.rift_ball_damage": "%1$s got too close to a Rift Ball",
+  "death.attack.dooms_spike_damage": "%1$s forgot to be aware of spikes.",
+  "death.attack.dooms_spike_damage.player": "%1$s forgot to be aware of spikes whilst trying to escape %2$s",
+  "death.attack.dooms_spike_damage.item": "%1$s was killed by %2$s using %3$s"
 }

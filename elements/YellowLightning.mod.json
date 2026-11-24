@@ -4,10 +4,10 @@
   "definition": {
     "mobName": "Yellow Lightning",
     "mobLabel": "",
-    "mobModelName": "Modelmissilebombs",
-    "mobModelTexture": "yellowlightning.png",
+    "mobModelName": "Modelmissilebeam",
+    "mobModelTexture": "nothingness2.png",
     "transparentModelCondition": {
-      "fixedValue": false
+      "fixedValue": true
     },
     "isShakingCondition": {
       "fixedValue": false
@@ -16,12 +16,20 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.0,
+      "name": "YellowLightningScale"
     },
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelmissilebeam",
+        "texture": "yellowlightningbeam.png",
+        "disableHurtOverlay": false,
+        "glow": true
+      }
+    ],
     "animations": [],
     "modelWidth": 1.0,
     "modelHeight": 1.0,
@@ -76,12 +84,12 @@
     "xpAmount": 0,
     "waterMob": false,
     "breatheUnderwater": {
-      "fixedValue": false
-    },
-    "pushedByFluids": {
       "fixedValue": true
     },
-    "flyingMob": false,
+    "pushedByFluids": {
+      "fixedValue": false
+    },
+    "flyingMob": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "disableCollisions": true,
@@ -126,6 +134,13 @@
         "name": "YellowLightningTimeBeforeExplosion",
         "type": "integer",
         "value": 20
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "ScaleMultiplier",
+        "type": "integer",
+        "value": 0
       }
     ],
     "onMobTickUpdate": {

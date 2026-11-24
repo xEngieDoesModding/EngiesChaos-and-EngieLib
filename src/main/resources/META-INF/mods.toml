@@ -7,10 +7,10 @@ modId="engies_chaos"
 version="30.59.64"
 displayName="Engie's Chaos"
 updateJSONURL="https://raw.githubusercontent.com/DevEngieGames/EngiesChaos-and-EngieLib/refs/heads/Update-Check/EngiesChaos.json"
-displayURL="https://github.com/DevEngieGames/EngiesChaos-and-EngieLib"
+displayURL="https://github.com/xEngieDoesModding/EngiesChaos-and-EngieLib"
 logoFile="logo.png"
 credits="DevEngie (All About Engie Creator)"
-authors="EngieGames(aka xEngieGames/xEngie)"
+authors="xEngieDoesModding/xEngieGames"
 description="A Reworked version of All About Engie by EngieGames with full permission from DevEngie to reupload All About Engie. If you find issues, report them on the GitHub page for the mod please and thank you."
 
 # Start of user code block mod configuration

@@ -8,12 +8,16 @@ public class ForecastStatementDisplay1Procedure {
 	public static boolean execute(LevelAccessor world) {
 		if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true || EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true) {
-			if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
-				if (EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum < 5 && EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum >= 1) {
-					return true;
+			if (EngiesChaosModVariables.MapVariables.get(world).doomsdayhordedialogue >= 1) {
+				return true;
+			} else if (EngiesChaosModVariables.MapVariables.get(world).doomsdayhordedialogue == 0) {
+				if (EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true) {
+					if (EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum < 5 && EngiesChaosModVariables.MapVariables.get(world).ddaydialoguenum >= 1) {
+						return true;
+					}
+				} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true) {
+					return false;
 				}
-			} else if (EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true || EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true) {
-				return false;
 			}
 		} else if (!(EngiesChaosModVariables.MapVariables.get(world).DoomsdayStart == true || EngiesChaosModVariables.MapVariables.get(world).SuperDoomsdayStart == true || EngiesChaosModVariables.MapVariables.get(world).TheEndStart == true
 				|| EngiesChaosModVariables.MapVariables.get(world).EngiesWrathStart == true)) {

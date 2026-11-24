@@ -4,10 +4,10 @@
   "definition": {
     "mobName": "Normal",
     "mobLabel": "",
-    "mobModelName": "Modelmissilebombs",
-    "mobModelTexture": "normal.png",
+    "mobModelName": "Modelmissilebeam",
+    "mobModelTexture": "nothingness2.png",
     "transparentModelCondition": {
-      "fixedValue": false
+      "fixedValue": true
     },
     "isShakingCondition": {
       "fixedValue": false
@@ -16,12 +16,20 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.0,
+      "name": "NormalScale"
     },
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelmissilebeam",
+        "texture": "normalbeam.png",
+        "disableHurtOverlay": false,
+        "glow": true
+      }
+    ],
     "animations": [],
     "modelWidth": 1.0,
     "modelHeight": 1.0,
@@ -126,6 +134,13 @@
         "name": "NormalTimeBeforeExplosion",
         "type": "integer",
         "value": 120
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "ScaleMultiplier",
+        "type": "integer",
+        "value": 0
       }
     ],
     "onMobTickUpdate": {

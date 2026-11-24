@@ -3,11 +3,15 @@ package engiegames.engies_chaos.entity;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
+import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -25,6 +29,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.BlockPos;
 
 import javax.annotation.Nullable;
 
@@ -34,6 +39,7 @@ import engiegames.engies_chaos.init.EngiesChaosModEntities;
 
 public class BlueBurstEntity extends PathfinderMob {
 	public static final EntityDataAccessor<Integer> DATA_BlueBurstTimeBeforeExplosion = SynchedEntityData.defineId(BlueBurstEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_ScaleMultiplier = SynchedEntityData.defineId(BlueBurstEntity.class, EntityDataSerializers.INT);
 
 	public BlueBurstEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EngiesChaosModEntities.BLUE_BURST.get(), world);
@@ -45,6 +51,7 @@ public class BlueBurstEntity extends PathfinderMob {
 		xpReward = 0;
 		setNoAi(false);
 		setPersistenceRequired();
+		this.moveControl = new FlyingMoveControl(this, 10, true);
 	}
 
 	@Override
@@ -56,6 +63,12 @@ public class BlueBurstEntity extends PathfinderMob {
 	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.define(DATA_BlueBurstTimeBeforeExplosion, 60);
+		this.entityData.define(DATA_ScaleMultiplier, 0);
+	}
+
+	@Override
+	protected PathNavigation createNavigation(Level world) {
+		return new FlyingPathNavigation(this, world);
 	}
 
 	@Override
@@ -71,6 +84,11 @@ public class BlueBurstEntity extends PathfinderMob {
 
 	@Override
 	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
+	}
+
+	@Override
+	public boolean causeFallDamage(float l, float d, DamageSource source) {
 		return false;
 	}
 
@@ -119,6 +137,7 @@ public class BlueBurstEntity extends PathfinderMob {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putInt("DataBlueBurstTimeBeforeExplosion", this.entityData.get(DATA_BlueBurstTimeBeforeExplosion));
+		compound.putInt("DataScaleMultiplier", this.entityData.get(DATA_ScaleMultiplier));
 	}
 
 	@Override
@@ -126,12 +145,34 @@ public class BlueBurstEntity extends PathfinderMob {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("DataBlueBurstTimeBeforeExplosion"))
 			this.entityData.set(DATA_BlueBurstTimeBeforeExplosion, compound.getInt("DataBlueBurstTimeBeforeExplosion"));
+		if (compound.contains("DataScaleMultiplier"))
+			this.entityData.set(DATA_ScaleMultiplier, compound.getInt("DataScaleMultiplier"));
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
 		MissileTickUpdateProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	@Override
+	public boolean canBreatheUnderwater() {
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Level world = this.level;
+		Entity entity = this;
+		return true;
+	}
+
+	@Override
+	public boolean isPushedByFluid() {
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Level world = this.level;
+		Entity entity = this;
+		return false;
 	}
 
 	@Override
@@ -147,6 +188,20 @@ public class BlueBurstEntity extends PathfinderMob {
 	protected void pushEntities() {
 	}
 
+	@Override
+	protected void checkFallDamage(double y, boolean onGroundIn, BlockState state, BlockPos pos) {
+	}
+
+	@Override
+	public void setNoGravity(boolean ignored) {
+		super.setNoGravity(true);
+	}
+
+	public void aiStep() {
+		super.aiStep();
+		this.setNoGravity(true);
+	}
+
 	public static void init() {
 	}
 
@@ -157,6 +212,7 @@ public class BlueBurstEntity extends PathfinderMob {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.FLYING_SPEED, 0);
 		return builder;
 	}
 }

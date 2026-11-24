@@ -16,10 +16,10 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "smithingInputStack": {
-      "value": "CUSTOM:XEngieUpgradeChestplate"
+      "value": "CUSTOM:RoughianEngieGamess.body"
     },
     "smithingInputAdditionStack": {
-      "value": "CUSTOM:RoughianEngieGamess.body"
+      "value": "CUSTOM:XEngieUpgradeChestplate"
     },
     "smithingInputTemplateStack": {
       "value": ""

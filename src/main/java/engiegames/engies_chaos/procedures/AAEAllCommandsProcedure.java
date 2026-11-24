@@ -145,6 +145,11 @@ public class AAEAllCommandsProcedure {
 					EngiesChaosMod.queueServerWork(1, () -> {
 						DoomsdaySummonProcedure.execute(world);
 					});
+				} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("resetplayercount")) {
+					EngiesChaosModVariables.MapVariables.get(world).totalplayersinworld = world.players().size();
+					EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("Successfully reset the Player Count!"), true);
 				}
 			} else {
 				{
@@ -225,6 +230,11 @@ public class AAEAllCommandsProcedure {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7cYou need a player to use this command on them!"), false);
 				}
+			} else if (((StringArgumentType.getString(arguments, "AltType")).toLowerCase()).equals("resetplayercount")) {
+				EngiesChaosModVariables.MapVariables.get(world).totalplayersinworld = world.players().size();
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(Component.literal("Successfully reset the Player Count!"), true);
 			}
 		} else if (((StringArgumentType.getString(arguments, "MainType")).toLowerCase()).equals("contentcreator")) {
 			if ((entity.getPersistentData().getBoolean("EngiesChaos_Dev") || entity.getPersistentData().getBoolean("EngiesChaos_Contributor") || entity.getPersistentData().getBoolean("EngiesChaos_BetaTester")
@@ -289,6 +299,14 @@ public class AAEAllCommandsProcedure {
 					}
 				} else {
 					EngiesChaosMod.LOGGER.warn("NO USER FOUND!!!");
+				}
+			}
+		} else {
+			{
+				Entity _ent = entity;
+				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "tellraw @p {\"text\":\"Unknown command syntax.\",\"color\":\"red\"}");
 				}
 			}
 		}

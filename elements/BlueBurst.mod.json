@@ -4,10 +4,10 @@
   "definition": {
     "mobName": "Blue Burst",
     "mobLabel": "",
-    "mobModelName": "Modelmissilebombs",
-    "mobModelTexture": "blueburst.png",
+    "mobModelName": "Modelmissilebeam",
+    "mobModelTexture": "nothingness2.png",
     "transparentModelCondition": {
-      "fixedValue": false
+      "fixedValue": true
     },
     "isShakingCondition": {
       "fixedValue": false
@@ -16,12 +16,20 @@
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.0,
+      "name": "BlueBurstScale"
     },
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "Modelmissilebeam",
+        "texture": "blueburstbeam.png",
+        "disableHurtOverlay": false,
+        "glow": true
+      }
+    ],
     "animations": [],
     "modelWidth": 1.0,
     "modelHeight": 1.0,
@@ -76,12 +84,12 @@
     "xpAmount": 0,
     "waterMob": false,
     "breatheUnderwater": {
-      "fixedValue": false
-    },
-    "pushedByFluids": {
       "fixedValue": true
     },
-    "flyingMob": false,
+    "pushedByFluids": {
+      "fixedValue": false
+    },
+    "flyingMob": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "disableCollisions": true,
@@ -126,6 +134,13 @@
         "name": "BlueBurstTimeBeforeExplosion",
         "type": "integer",
         "value": 60
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "ScaleMultiplier",
+        "type": "integer",
+        "value": 0
       }
     ],
     "onMobTickUpdate": {

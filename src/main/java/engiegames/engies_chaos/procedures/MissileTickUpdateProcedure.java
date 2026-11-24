@@ -6,10 +6,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
@@ -17,7 +14,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 
 import java.util.Comparator;
-import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModDamageSources;
@@ -36,15 +32,6 @@ public class MissileTickUpdateProcedure {
 			if (_ent instanceof ServerPlayer _serverPlayer)
 				_serverPlayer.connection.teleport(x, (world.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z)), z, _ent.getYRot(), _ent.getXRot());
 		}
-		for (Entity entityiterator : new ArrayList<>(world.players())) {
-			if (!(entityiterator instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(MobEffects.DARKNESS))) {
-				if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1, 255, false, false));
-			} else if (entityiterator instanceof LivingEntity _livEnt4 && _livEnt4.hasEffect(MobEffects.DARKNESS)) {
-				if (entity instanceof LivingEntity _entity)
-					_entity.removeEffect(MobEffects.GLOWING);
-			}
-		}
 		if (entity instanceof YellowLightningEntity) {
 			{
 				Entity _entityTeam = entity;
@@ -59,6 +46,10 @@ public class MissileTickUpdateProcedure {
 			if (entity instanceof YellowLightningEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(YellowLightningEntity.DATA_YellowLightningTimeBeforeExplosion,
 						(int) ((entity instanceof YellowLightningEntity _datEntI ? _datEntI.getEntityData().get(YellowLightningEntity.DATA_YellowLightningTimeBeforeExplosion) : 0) - 1));
+			if ((entity instanceof YellowLightningEntity _datEntI ? _datEntI.getEntityData().get(YellowLightningEntity.DATA_YellowLightningTimeBeforeExplosion) : 0) > 15) {
+				if (entity instanceof YellowLightningEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(YellowLightningEntity.DATA_ScaleMultiplier, (int) ((entity instanceof YellowLightningEntity _datEntI ? _datEntI.getEntityData().get(YellowLightningEntity.DATA_ScaleMultiplier) : 0) + 1));
+			}
 			if ((entity instanceof YellowLightningEntity _datEntI ? _datEntI.getEntityData().get(YellowLightningEntity.DATA_YellowLightningTimeBeforeExplosion) : 0) <= 0) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -68,7 +59,7 @@ public class MissileTickUpdateProcedure {
 					final Vec3 _center = new Vec3(x, y, z);
 					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(7 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 						if (entityiterator instanceof Player && (entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
-							entityiterator.hurt(EngiesChaosModDamageSources.YELLOW_LIGHTNING_EXPLOSION, Math.round(Mth.nextInt(RandomSource.create(), 15, 30)));
+							entityiterator.hurt(EngiesChaosModDamageSources.YELLOW_LIGHTNING_EXPLOSION, Mth.nextInt(RandomSource.create(), 15, 30));
 						}
 					}
 				}
@@ -90,6 +81,10 @@ public class MissileTickUpdateProcedure {
 			}
 			if (entity instanceof BlueBurstEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(BlueBurstEntity.DATA_BlueBurstTimeBeforeExplosion, (int) ((entity instanceof BlueBurstEntity _datEntI ? _datEntI.getEntityData().get(BlueBurstEntity.DATA_BlueBurstTimeBeforeExplosion) : 0) - 1));
+			if ((entity instanceof BlueBurstEntity _datEntI ? _datEntI.getEntityData().get(BlueBurstEntity.DATA_BlueBurstTimeBeforeExplosion) : 0) > 20) {
+				if (entity instanceof BlueBurstEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(BlueBurstEntity.DATA_ScaleMultiplier, (int) ((entity instanceof BlueBurstEntity _datEntI ? _datEntI.getEntityData().get(BlueBurstEntity.DATA_ScaleMultiplier) : 0) + 1));
+			}
 			if ((entity instanceof BlueBurstEntity _datEntI ? _datEntI.getEntityData().get(BlueBurstEntity.DATA_BlueBurstTimeBeforeExplosion) : 0) <= 0) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -99,7 +94,7 @@ public class MissileTickUpdateProcedure {
 					final Vec3 _center = new Vec3(x, y, z);
 					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(21 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 						if (entityiterator instanceof Player && (entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
-							entityiterator.hurt(EngiesChaosModDamageSources.YELLOW_LIGHTNING_EXPLOSION, Math.round(Mth.nextInt(RandomSource.create(), 40, 60)));
+							entityiterator.hurt(EngiesChaosModDamageSources.BLUE_BURST_EXPLOSION, Mth.nextInt(RandomSource.create(), 40, 60));
 						}
 					}
 				}
@@ -121,6 +116,10 @@ public class MissileTickUpdateProcedure {
 			}
 			if (entity instanceof NormalEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(NormalEntity.DATA_NormalTimeBeforeExplosion, (int) ((entity instanceof NormalEntity _datEntI ? _datEntI.getEntityData().get(NormalEntity.DATA_NormalTimeBeforeExplosion) : 0) - 1));
+			if ((entity instanceof NormalEntity _datEntI ? _datEntI.getEntityData().get(NormalEntity.DATA_NormalTimeBeforeExplosion) : 0) > 40) {
+				if (entity instanceof NormalEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(NormalEntity.DATA_ScaleMultiplier, (int) ((entity instanceof NormalEntity _datEntI ? _datEntI.getEntityData().get(NormalEntity.DATA_ScaleMultiplier) : 0) + 1));
+			}
 			if ((entity instanceof NormalEntity _datEntI ? _datEntI.getEntityData().get(NormalEntity.DATA_NormalTimeBeforeExplosion) : 0) <= 0) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -130,7 +129,7 @@ public class MissileTickUpdateProcedure {
 					final Vec3 _center = new Vec3(x, y, z);
 					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(70 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 						if (entityiterator instanceof Player && (entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
-							entityiterator.hurt(EngiesChaosModDamageSources.NORMAL_EXPLOSION, Math.round(Mth.nextInt(RandomSource.create(), 25, 40)));
+							entityiterator.hurt(EngiesChaosModDamageSources.NORMAL_EXPLOSION, Mth.nextInt(RandomSource.create(), 25, 40));
 						}
 					}
 				}
@@ -142,6 +141,10 @@ public class MissileTickUpdateProcedure {
 		} else if (entity instanceof MOABEntity) {
 			if (entity instanceof MOABEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(MOABEntity.DATA_MOABTimeBeforeExplosion, (int) ((entity instanceof MOABEntity _datEntI ? _datEntI.getEntityData().get(MOABEntity.DATA_MOABTimeBeforeExplosion) : 0) - 1));
+			if ((entity instanceof MOABEntity _datEntI ? _datEntI.getEntityData().get(MOABEntity.DATA_MOABTimeBeforeExplosion) : 0) > 40) {
+				if (entity instanceof MOABEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(MOABEntity.DATA_ScaleMultiplier, (int) ((entity instanceof MOABEntity _datEntI ? _datEntI.getEntityData().get(MOABEntity.DATA_ScaleMultiplier) : 0) + 1));
+			}
 			if ((entity instanceof MOABEntity _datEntI ? _datEntI.getEntityData().get(MOABEntity.DATA_MOABTimeBeforeExplosion) : 0) <= 0) {
 				EngiesChaosModVariables.MapVariables.get(world).playmissileexplosionsound = true;
 				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
@@ -151,7 +154,7 @@ public class MissileTickUpdateProcedure {
 					final Vec3 _center = new Vec3(x, y, z);
 					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(126 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
 						if (entityiterator instanceof Player && (entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).DoomsdayAlive == true) {
-							entityiterator.hurt(EngiesChaosModDamageSources.MOAB_EXPLOSION, Math.round(Mth.nextInt(RandomSource.create(), 60, 80)));
+							entityiterator.hurt(EngiesChaosModDamageSources.MOAB_EXPLOSION, Mth.nextInt(RandomSource.create(), 60, 80));
 						}
 					}
 				}

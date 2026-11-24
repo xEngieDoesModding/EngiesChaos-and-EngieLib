@@ -4,7 +4,7 @@
   "definition": {
     "exhaustion": 0.0,
     "scaling": "never",
-    "effects": "burning",
+    "effects": "thorns",
     "normalDeathMessage": "%1$s died because someone failed to give the plush attention.",
     "itemDeathMessage": "%1$s was killed by %2$s using %3$s",
     "playerDeathMessage": "%1$s died because someone failed to give the plush attention whilst trying to escape %2$s"

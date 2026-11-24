@@ -48,20 +48,20 @@ public class ObjectiveUIOverlay {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		if (ObjectiveOverlayCheckProcedure.execute(world)) {
 			if (DoomsDayCheckProcedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline1.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 69, 0, 0, 250, 75, 250, 75);
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/ddayobjective.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 90, 0, 0, 352, 50, 352, 50);
 			}
 			if (SuperDoomsDayCheckProcedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline2.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 69, 0, 0, 250, 75, 250, 75);
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/sddayobjective.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 90, 0, 0, 352, 50, 352, 50);
 			}
 			if (TheEndCheckProcedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline3.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 69, 0, 0, 250, 75, 250, 75);
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/theendobjective.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 90, 0, 0, 352, 50, 352, 50);
 			}
 			if (EngiesWrathCheckProcedure.execute(world)) {
-				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/objectiveline4.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -122, 69, 0, 0, 250, 75, 250, 75);
+				RenderSystem.setShaderTexture(0, new ResourceLocation("engies_chaos:textures/screens/ewrathobjective.png"));
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), w / 2 + -180, 90, 0, 0, 352, 50, 352, 50);
 			}
 		}
 		RenderSystem.depthMask(true);
