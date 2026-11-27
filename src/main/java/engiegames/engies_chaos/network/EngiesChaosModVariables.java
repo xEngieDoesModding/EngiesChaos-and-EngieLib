@@ -563,6 +563,7 @@ public class EngiesChaosModVariables {
 		public double xengiesharkorandnum = 0;
 		public double HordeDialogueDisappearTimer = 0;
 		public boolean finalforecasthordedialogue = false;
+		public boolean unlockend = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -875,6 +876,7 @@ public class EngiesChaosModVariables {
 			xengiesharkorandnum = nbt.getDouble("xengiesharkorandnum");
 			HordeDialogueDisappearTimer = nbt.getDouble("HordeDialogueDisappearTimer");
 			finalforecasthordedialogue = nbt.getBoolean("finalforecasthordedialogue");
+			unlockend = nbt.getBoolean("unlockend");
 		}
 
 		@Override
@@ -1183,6 +1185,7 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("xengiesharkorandnum", xengiesharkorandnum);
 			nbt.putDouble("HordeDialogueDisappearTimer", HordeDialogueDisappearTimer);
 			nbt.putBoolean("finalforecasthordedialogue", finalforecasthordedialogue);
+			nbt.putBoolean("unlockend", unlockend);
 			return nbt;
 		}
 

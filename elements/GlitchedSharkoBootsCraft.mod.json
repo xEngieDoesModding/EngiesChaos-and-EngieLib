@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "glitchedsharkoboots",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:GlitchedSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:GlitchedSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:GlitchedSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:GlitchedSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:GlitchedSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:GlitchedShark.boots"
+    },
+    "name": "glitched_sharko_boots_craft",
+    "namespace": "mod"
+  }
+}

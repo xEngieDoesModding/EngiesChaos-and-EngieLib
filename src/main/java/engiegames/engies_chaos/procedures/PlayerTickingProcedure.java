@@ -1,6 +1,10 @@
 package engiegames.engies_chaos.procedures;
 
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.LevelAccessor;
@@ -22,12 +26,26 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
+import javax.annotation.Nullable;
+
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 import engiegames.engies_chaos.EngiesChaosMod;
 
+@Mod.EventBusSubscriber
 public class PlayerTickingProcedure {
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level, event.player);
+		}
+	}
+
 	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
+	}
+
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		{
@@ -115,60 +133,6 @@ public class PlayerTickingProcedure {
 				}
 			}
 		}
-		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == true && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_THROWBACK_TOGGLE) == false) {
-			if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == false) {
-				{
-					Entity _ent = entity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "fill ~15 ~15 ~15 ~-15 ~-15 ~-15 minecraft:end_stone replace engies_chaos:antimatter_ore");
-					}
-				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "fill ~15 ~15 ~15 ~-15 ~-15 ~-15 minecraft:stone replace engies_chaos:old_engie_ore");
-				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "fill ~15 ~15 ~15 ~-15 ~-15 ~-15 minecraft:deepslate replace engies_chaos:old_deepslate_engie_ore");
-				}
-			}
-		} else if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIES_CHAOS_TOGGLE) == false && world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_THROWBACK_TOGGLE) == true) {
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "fill ~15 ~15 ~15 ~-15 ~-15 ~-15 minecraft:stone replace engies_chaos:unobtainium_ore");
-				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "fill ~15 ~15 ~15 ~-15 ~-15 ~-15 minecraft:deepslate replace engies_chaos:deepslate_unobtainium_ore");
-				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "fill ~15 ~15 ~15 ~-15 ~-15 ~-15 minecraft:stone replace engies_chaos:engie_ore");
-				}
-			}
-			{
-				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "fill ~15 ~15 ~15 ~-15 ~-15 ~-15 minecraft:deepslate replace engies_chaos:deepslate_engie_ore");
-				}
-			}
-		}
 		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.TRUE_THROWBACK_TOGGLE) == true) {
 			if (entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null) instanceof IItemHandler _modHandlerIter) {
 				for (int _idx = 0; _idx < _modHandlerIter.getSlots(); _idx++) {
@@ -189,21 +153,21 @@ public class PlayerTickingProcedure {
 				_player.getFoodData().setFoodLevel(20);
 		}
 		if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 525) {
-			if (entity instanceof LivingEntity _livingEntity32 && _livingEntity32.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-				_livingEntity32.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(525);
+			if (entity instanceof LivingEntity _livingEntity21 && _livingEntity21.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
+				_livingEntity21.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(525);
 		} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 690) {
-			if (entity instanceof LivingEntity _livingEntity33 && _livingEntity33.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-				_livingEntity33.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(690);
+			if (entity instanceof LivingEntity _livingEntity22 && _livingEntity22.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
+				_livingEntity22.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(690);
 		} else if (EngiesChaosModVariables.MapVariables.get(world).MobDifficulty == 525000) {
-			if (entity instanceof LivingEntity _livingEntity34 && _livingEntity34.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-				_livingEntity34.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(525000);
+			if (entity instanceof LivingEntity _livingEntity23 && _livingEntity23.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
+				_livingEntity23.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(525000);
 		} else {
-			if (entity instanceof LivingEntity _livingEntity35 && _livingEntity35.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-				_livingEntity35.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(1);
+			if (entity instanceof LivingEntity _livingEntity24 && _livingEntity24.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
+				_livingEntity24.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(1);
 		}
 		if (!world.isClientSide()) {
-			if (entity instanceof ServerPlayer _plr37 && _plr37.level instanceof ServerLevel
-					&& _plr37.getAdvancements().getOrStartProgress(_plr37.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone()) {
+			if (entity instanceof ServerPlayer _plr26 && _plr26.level instanceof ServerLevel
+					&& _plr26.getAdvancements().getOrStartProgress(_plr26.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone()) {
 				{
 					boolean _setval = true;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -211,8 +175,8 @@ public class PlayerTickingProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-			} else if (!(entity instanceof ServerPlayer _plr38 && _plr38.level instanceof ServerLevel
-					&& _plr38.getAdvancements().getOrStartProgress(_plr38.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone())) {
+			} else if (!(entity instanceof ServerPlayer _plr27 && _plr27.level instanceof ServerLevel
+					&& _plr27.getAdvancements().getOrStartProgress(_plr27.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_games_ban_scythe_obtained"))).isDone())) {
 				{
 					boolean _setval = false;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -221,8 +185,8 @@ public class PlayerTickingProcedure {
 					});
 				}
 			}
-			if (entity instanceof ServerPlayer _plr39 && _plr39.level instanceof ServerLevel
-					&& _plr39.getAdvancements().getOrStartProgress(_plr39.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_ban_scythe_obtained"))).isDone()) {
+			if (entity instanceof ServerPlayer _plr28 && _plr28.level instanceof ServerLevel
+					&& _plr28.getAdvancements().getOrStartProgress(_plr28.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_ban_scythe_obtained"))).isDone()) {
 				{
 					boolean _setval = true;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -230,8 +194,8 @@ public class PlayerTickingProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-			} else if (!(entity instanceof ServerPlayer _plr40 && _plr40.level instanceof ServerLevel
-					&& _plr40.getAdvancements().getOrStartProgress(_plr40.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_ban_scythe_obtained"))).isDone())) {
+			} else if (!(entity instanceof ServerPlayer _plr29 && _plr29.level instanceof ServerLevel
+					&& _plr29.getAdvancements().getOrStartProgress(_plr29.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:antimatter_engie_games_ban_scythe_obtained"))).isDone())) {
 				{
 					boolean _setval = false;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -240,8 +204,8 @@ public class PlayerTickingProcedure {
 					});
 				}
 			}
-			if (entity instanceof ServerPlayer _plr41 && _plr41.level instanceof ServerLevel
-					&& _plr41.getAdvancements().getOrStartProgress(_plr41.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) {
+			if (entity instanceof ServerPlayer _plr30 && _plr30.level instanceof ServerLevel
+					&& _plr30.getAdvancements().getOrStartProgress(_plr30.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()) {
 				{
 					boolean _setval = true;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -249,8 +213,8 @@ public class PlayerTickingProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-			} else if (!(entity instanceof ServerPlayer _plr42 && _plr42.level instanceof ServerLevel
-					&& _plr42.getAdvancements().getOrStartProgress(_plr42.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone())) {
+			} else if (!(entity instanceof ServerPlayer _plr31 && _plr31.level instanceof ServerLevel
+					&& _plr31.getAdvancements().getOrStartProgress(_plr31.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone())) {
 				{
 					boolean _setval = false;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -260,10 +224,16 @@ public class PlayerTickingProcedure {
 				}
 			}
 		}
-		if (entity instanceof ServerPlayer _plr43 && _plr43.level instanceof ServerLevel && _plr43.getAdvancements().getOrStartProgress(_plr43.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_done"))).isDone()
+		if (entity instanceof ServerPlayer _plr32 && _plr32.level instanceof ServerLevel && _plr32.getAdvancements().getOrStartProgress(_plr32.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone()) {
+			if (EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck == false) {
+				EngiesChaosModVariables.MapVariables.get(world).antimatterdropcheck = true;
+				EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+			}
+		}
+		if (entity instanceof ServerPlayer _plr33 && _plr33.level instanceof ServerLevel && _plr33.getAdvancements().getOrStartProgress(_plr33.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_done"))).isDone()
 				&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pickaxeonly == 0) {
-			if (!(entity instanceof ServerPlayer _plr44 && _plr44.level instanceof ServerLevel
-					&& _plr44.getAdvancements().getOrStartProgress(_plr44.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:pickaxe_only_all_done"))).isDone())) {
+			if (!(entity instanceof ServerPlayer _plr34 && _plr34.level instanceof ServerLevel
+					&& _plr34.getAdvancements().getOrStartProgress(_plr34.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:pickaxe_only_all_done"))).isDone())) {
 				if (entity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:pickaxe_only_all_done"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -274,10 +244,10 @@ public class PlayerTickingProcedure {
 				}
 			}
 		}
-		if (entity instanceof ServerPlayer _plr46 && _plr46.level instanceof ServerLevel && _plr46.getAdvancements().getOrStartProgress(_plr46.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()
+		if (entity instanceof ServerPlayer _plr36 && _plr36.level instanceof ServerLevel && _plr36.getAdvancements().getOrStartProgress(_plr36.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:all_fully_done"))).isDone()
 				&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pickaxeonly == 0) {
-			if (!(entity instanceof ServerPlayer _plr47 && _plr47.level instanceof ServerLevel
-					&& _plr47.getAdvancements().getOrStartProgress(_plr47.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:pickaxe_only_all_fully_done"))).isDone())) {
+			if (!(entity instanceof ServerPlayer _plr37 && _plr37.level instanceof ServerLevel
+					&& _plr37.getAdvancements().getOrStartProgress(_plr37.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:pickaxe_only_all_fully_done"))).isDone())) {
 				if (entity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:pickaxe_only_all_fully_done"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -317,11 +287,11 @@ public class PlayerTickingProcedure {
 			}
 		}
 		if (world.getLevelData().getGameRules().getBoolean(EngiesChaosModGameRules.ENGIE_POC) == true) {
-			if (entity instanceof ServerPlayer _plr54 && _plr54.level instanceof ServerLevel
-					&& _plr54.getAdvancements().getOrStartProgress(_plr54.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_poc_all_fully_done"))).isDone()
+			if (entity instanceof ServerPlayer _plr44 && _plr44.level instanceof ServerLevel
+					&& _plr44.getAdvancements().getOrStartProgress(_plr44.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_poc_all_fully_done"))).isDone()
 					&& (entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).pickaxeonly == 0) {
-				if (!(entity instanceof ServerPlayer _plr55 && _plr55.level instanceof ServerLevel
-						&& _plr55.getAdvancements().getOrStartProgress(_plr55.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_poc_pickaxe_only_all_fully_done"))).isDone())) {
+				if (!(entity instanceof ServerPlayer _plr45 && _plr45.level instanceof ServerLevel
+						&& _plr45.getAdvancements().getOrStartProgress(_plr45.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_poc_pickaxe_only_all_fully_done"))).isDone())) {
 					if (entity instanceof ServerPlayer _player) {
 						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("engies_chaos:engie_poc_pickaxe_only_all_fully_done"));
 						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

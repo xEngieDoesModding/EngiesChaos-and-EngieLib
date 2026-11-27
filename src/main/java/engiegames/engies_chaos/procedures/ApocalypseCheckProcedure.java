@@ -21,6 +21,9 @@ import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
 
+import java.util.ArrayList;
+
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
 import engiegames.engies_chaos.init.EngiesChaosModGameRules;
 
 @Mod.EventBusSubscriber
@@ -71,16 +74,25 @@ public class ApocalypseCheckProcedure {
 					}
 				}
 			}
-			if ((entity.level.dimension()) == Level.END) {
-				if (!(entity instanceof ServerPlayer _plr9 && _plr9.level instanceof ServerLevel
-						&& _plr9.getAdvancements().getOrStartProgress(_plr9.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone())) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
-				}
-			} else if ((entity.level.dimension()) == Level.OVERWORLD) {
-				if (!(world instanceof Level _lvl14 && _lvl14.isDay())) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+			for (Entity entityiterator : new ArrayList<>(world.players())) {
+				if ((entityiterator.level.dimension()) == Level.END) {
+					if (!(entityiterator instanceof ServerPlayer _plr9 && _plr9.level instanceof ServerLevel
+							&& _plr9.getAdvancements().getOrStartProgress(_plr9.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone())) {
+						if (EngiesChaosModVariables.MapVariables.get(world).unlockend == false) {
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+						}
+					} else if (entityiterator instanceof ServerPlayer _plr11 && _plr11.level instanceof ServerLevel
+							&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone()
+							&& EngiesChaosModVariables.MapVariables.get(world).unlockend == false) {
+						EngiesChaosModVariables.MapVariables.get(world).unlockend = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					}
+				} else if ((entityiterator.level.dimension()) == Level.OVERWORLD) {
+					if (!(world instanceof Level _lvl15 && _lvl15.isDay())) {
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+					}
 				}
 			}
 			if (entity instanceof LivingEntity _entity)
@@ -121,16 +133,25 @@ public class ApocalypseCheckProcedure {
 					}
 				}
 			}
-			if ((entity.level.dimension()) == Level.END) {
-				if (!(entity instanceof ServerPlayer _plr29 && _plr29.level instanceof ServerLevel
-						&& _plr29.getAdvancements().getOrStartProgress(_plr29.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone())) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
-				}
-			} else if ((entity.level.dimension()) == Level.OVERWORLD) {
-				if (!(world instanceof Level _lvl34 && _lvl34.isDay())) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+			for (Entity entityiterator : new ArrayList<>(world.players())) {
+				if ((entityiterator.level.dimension()) == Level.END) {
+					if (!(entityiterator instanceof ServerPlayer _plr31 && _plr31.level instanceof ServerLevel
+							&& _plr31.getAdvancements().getOrStartProgress(_plr31.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone())) {
+						if (EngiesChaosModVariables.MapVariables.get(world).unlockend == false) {
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+						}
+					} else if (entityiterator instanceof ServerPlayer _plr33 && _plr33.level instanceof ServerLevel
+							&& _plr33.getAdvancements().getOrStartProgress(_plr33.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone()
+							&& EngiesChaosModVariables.MapVariables.get(world).unlockend == false) {
+						EngiesChaosModVariables.MapVariables.get(world).unlockend = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					}
+				} else if ((entityiterator.level.dimension()) == Level.OVERWORLD) {
+					if (!(world instanceof Level _lvl37 && _lvl37.isDay())) {
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+					}
 				}
 			}
 			if (entity instanceof LivingEntity _entity)
@@ -170,16 +191,25 @@ public class ApocalypseCheckProcedure {
 					}
 				}
 			}
-			if ((entity.level.dimension()) == Level.END) {
-				if (!(entity instanceof ServerPlayer _plr48 && _plr48.level instanceof ServerLevel
-						&& _plr48.getAdvancements().getOrStartProgress(_plr48.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone())) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
-				}
-			} else if ((entity.level.dimension()) == Level.OVERWORLD) {
-				if (!(world instanceof Level _lvl53 && _lvl53.isDay())) {
-					if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+			for (Entity entityiterator : new ArrayList<>(world.players())) {
+				if ((entityiterator.level.dimension()) == Level.END) {
+					if (!(entityiterator instanceof ServerPlayer _plr52 && _plr52.level instanceof ServerLevel
+							&& _plr52.getAdvancements().getOrStartProgress(_plr52.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone())) {
+						if (EngiesChaosModVariables.MapVariables.get(world).unlockend == false) {
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+						}
+					} else if (entityiterator instanceof ServerPlayer _plr54 && _plr54.level instanceof ServerLevel
+							&& _plr54.getAdvancements().getOrStartProgress(_plr54.server.getAdvancements().getAdvancement(new ResourceLocation("minecraft:end/kill_dragon"))).isDone()
+							&& EngiesChaosModVariables.MapVariables.get(world).unlockend == false) {
+						EngiesChaosModVariables.MapVariables.get(world).unlockend = true;
+						EngiesChaosModVariables.MapVariables.get(world).syncData(world);
+					}
+				} else if ((entityiterator.level.dimension()) == Level.OVERWORLD) {
+					if (!(world instanceof Level _lvl58 && _lvl58.isDay())) {
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level.isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 20, 0, false, false));
+					}
 				}
 			}
 			if (entity instanceof LivingEntity _entity)

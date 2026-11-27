@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "glitchedsharkoleggings",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:GlitchedSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:WormholeShark.legs"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:GlitchedSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:GlitchedShark.legs"
+    },
+    "name": "glitched_sharko_leggings_smithing",
+    "namespace": "mod"
+  }
+}

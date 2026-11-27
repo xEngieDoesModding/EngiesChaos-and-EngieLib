@@ -1,0 +1,59 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "Items.DYE#2"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Items.DYE#2"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "Items.DYE#2"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "Items.DYE#2"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "Items.DYE#2"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:GlitchedSharkoCloth"
+    },
+    "name": "glitched_sharko_cloth_craft",
+    "namespace": "mod"
+  }
+}

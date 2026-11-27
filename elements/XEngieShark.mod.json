@@ -1,0 +1,107 @@
+{
+  "_fv": 79,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "xengiesharkohelm",
+    "enableBody": true,
+    "textureBody": "xengiesharkochest",
+    "enableLeggings": true,
+    "textureLeggings": "xengiesharkoleg",
+    "enableBoots": true,
+    "textureBoots": "xengiesharkoboot",
+    "onBodyTick": {
+      "name": "CosmicDeathSharkoArmorFullSet"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "armorTextureFile": "backup_",
+    "helmetName": "xEngie Sharko Helmet",
+    "bodyName": "xEngie Sharko Chestplate",
+    "leggingsName": "xEngie Sharko Leggings",
+    "bootsName": "xEngie Sharko Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Modelsharkoarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "xengiesharkoarmor.png",
+    "bodyModelName": "Modelsharkoarmor",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "xengiesharkoarmor.png",
+    "leggingsModelName": "Modelsharkoarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "xengiesharkoarmor.png",
+    "bootsModelName": "Modelsharkoarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "xengiesharkoarmor.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 1024,
+    "damageValueHelmet": 1024,
+    "damageValueBody": 1024,
+    "damageValueLeggings": 1024,
+    "damageValueBoots": 1024,
+    "enchantability": 14,
+    "toughness": 20.0,
+    "knockbackResistance": 1.7000000000000002,
+    "equipSound": {
+      "value": "item.armor.equip_netherite"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:XEngieSharkoCloth"
+      }
+    ]
+  }
+}

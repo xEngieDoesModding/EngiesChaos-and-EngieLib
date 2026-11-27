@@ -1,0 +1,59 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:CosmicDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "Items.DYE#10"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Items.DYE#10"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "Items.DYE#10"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "CUSTOM:CosmicDeathSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "Items.DYE#10"
+      },
+      {
+        "value": "CUSTOM:EngieGamesTesseract"
+      },
+      {
+        "value": "Items.DYE#10"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:WormholeSharkoCloth"
+    },
+    "name": "wormhole_sharko_cloth_craft",
+    "namespace": "mod"
+  }
+}

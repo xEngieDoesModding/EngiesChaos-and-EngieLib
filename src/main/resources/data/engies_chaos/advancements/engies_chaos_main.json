@@ -58,7 +58,13 @@
       "engies_chaos:biblically_death_sharko_cloth_smithing",
       "engies_chaos:monstrosity_death_sharko_cloth_smithing",
       "engies_chaos:cosmic_death_sharko_cloth_smithing",
-      "engies_chaos:albino_sharko_cloth_smithing"
+      "engies_chaos:albino_sharko_cloth_smithing",
+      "engies_chaos:wormhole_sharko_cloth_craft",
+      "engies_chaos:glitched_sharko_cloth_craft",
+      "engies_chaos:wormhole_sharko_cloth_smithing",
+      "engies_chaos:glitched_sharko_cloth_smithing",
+      "engies_chaos:x_engie_sharko_cloth_craft",
+      "engies_chaos:x_engie_sharko_cloth_smithing"
     ]
   }
 }

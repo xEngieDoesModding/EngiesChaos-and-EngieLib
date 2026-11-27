@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "wormholesharkoleggings",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:CosmicDeathShark.legs"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:WormholeSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:WormholeShark.legs"
+    },
+    "name": "wormhole_sharko_leggings_smithing",
+    "namespace": "mod"
+  }
+}

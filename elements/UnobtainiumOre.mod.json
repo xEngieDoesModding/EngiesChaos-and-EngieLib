@@ -132,10 +132,10 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onBlockAdded": {
-      "name": "UnobtainiumOreOnTickUpdate"
+      "name": "MainOreChecks"
     },
     "onTickUpdate": {
-      "name": "UnobtainiumOreOnTickUpdate"
+      "name": "MainOreChecks"
     },
     "generateFeature": true,
     "restrictionBiomes": [

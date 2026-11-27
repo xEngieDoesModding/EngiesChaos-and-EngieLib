@@ -17,6 +17,8 @@ import net.minecraft.advancements.Advancement;
 
 import java.util.Comparator;
 
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
+
 public class WormholeEngieOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
@@ -34,14 +36,10 @@ public class WormholeEngieOnEntityTickUpdateProcedure {
 			}
 		}
 		if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(200 / 2d), e -> true).isEmpty()) {
-			{
-				final Vec3 _center = new Vec3(x, y, z);
-				for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(200 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
-					if (entityiterator instanceof Player) {
-						entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((entityiterator.getZ()), (entityiterator.getY() + 1.6), (entityiterator.getX())));
-					}
-				}
-			}
+			entity.lookAt(EntityAnchorArgument.Anchor.EYES,
+					new Vec3((((findEntityInWorldRange(world, Player.class, x, y, z, 200)).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HHGLookX),
+							(((findEntityInWorldRange(world, Player.class, x, y, z, 200)).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HHGLookY),
+							(((findEntityInWorldRange(world, Player.class, x, y, z, 200)).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HHGLookZ)));
 			if (entity instanceof Mob _entity)
 				_entity.getNavigation().stop();
 			if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:green_dye"
+    },
+    "b": {
+      "item": "engies_chaos:engie_games_tesseract"
+    },
+    "c": {
+      "item": "engies_chaos:wormhole_sharko_cloth"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:glitched_sharko_cloth",
+    "count": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "wormholesharkopickaxe",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:WormholeSharkoPickaxe"
+    },
+    "name": "wormhole_sharko_pickaxe_craft",
+    "namespace": "mod"
+  }
+}

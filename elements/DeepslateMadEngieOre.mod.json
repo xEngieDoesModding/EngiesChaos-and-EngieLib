@@ -71,7 +71,7 @@
     "emittedRedstonePower": {
       "fixedValue": 15.0
     },
-    "colorOnMap": "ORANGE_TERRACOTTA",
+    "colorOnMap": "RED",
     "noteBlockInstrument": "basedrum",
     "creativePickItem": {
       "value": ""
@@ -131,6 +131,12 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onBlockAdded": {
+      "name": "MainOreChecks"
+    },
+    "onTickUpdate": {
+      "name": "MainOreChecks"
+    },
     "generateFeature": true,
     "restrictionBiomes": [
       {

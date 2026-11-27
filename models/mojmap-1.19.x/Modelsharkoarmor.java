@@ -618,14 +618,14 @@ public class Modelsharkoarmor<T extends Entity> extends EntityModel<T> {
 				PartPose.offset(-1.9F, 12.0F, 0.0F));
 
 		PartDefinition LeftBoot = partdefinition.addOrReplaceChild("LeftBoot",
-				CubeListBuilder.create().texOffs(64, 0)
-						.addBox(-1.9F, 7.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.7F)).texOffs(48, 0)
+				CubeListBuilder.create().texOffs(16, 110)
+						.addBox(-1.9F, 7.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.7F)).texOffs(0, 110)
 						.addBox(-1.9F, 7.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(1.2F)),
 				PartPose.offset(1.9F, 12.0F, 0.0F));
 
 		PartDefinition RightBoot = partdefinition.addOrReplaceChild("RightBoot",
-				CubeListBuilder.create().texOffs(64, 9)
-						.addBox(-2.1F, 7.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.7F)).texOffs(48, 9)
+				CubeListBuilder.create().texOffs(16, 119)
+						.addBox(-2.1F, 7.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.7F)).texOffs(0, 119)
 						.addBox(-2.1F, 7.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(1.2F)),
 				PartPose.offset(-1.9F, 12.0F, 0.0F));
 

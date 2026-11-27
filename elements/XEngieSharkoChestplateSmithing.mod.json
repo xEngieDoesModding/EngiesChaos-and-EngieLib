@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "xengiesharkochestplate",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:XEngieSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:GlitchedShark.body"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:XEngieSharkoCloth"
+    },
+    "smithingInputTemplateStack": {
+      "value": ""
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:XEngieShark.body"
+    },
+    "name": "x_engie_sharko_chestplate_smithing",
+    "namespace": "mod"
+  }
+}

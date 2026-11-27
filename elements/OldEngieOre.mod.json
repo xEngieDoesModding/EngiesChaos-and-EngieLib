@@ -133,6 +133,12 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onBlockAdded": {
+      "name": "ThrowbackOreChecks"
+    },
+    "onTickUpdate": {
+      "name": "ThrowbackOreChecks"
+    },
     "generateFeature": true,
     "restrictionBiomes": [],
     "blocksToReplace": [

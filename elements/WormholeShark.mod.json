@@ -1,0 +1,107 @@
+{
+  "_fv": 79,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "wormholesharkohelm",
+    "enableBody": true,
+    "textureBody": "wormholesharkochest",
+    "enableLeggings": true,
+    "textureLeggings": "wormholesharkoleg",
+    "enableBoots": true,
+    "textureBoots": "wormholesharkoboot",
+    "onBodyTick": {
+      "name": "CosmicDeathSharkoArmorFullSet"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "armorTextureFile": "backup_",
+    "helmetName": "Wormhole Sharko Helmet",
+    "bodyName": "Wormhole Sharko Chestplate",
+    "leggingsName": "Wormhole Sharko Leggings",
+    "bootsName": "Wormhole Sharko Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Modelsharkoarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "wormholesharkoarmor.png",
+    "bodyModelName": "Modelsharkoarmor",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "wormholesharkoarmor.png",
+    "leggingsModelName": "Modelsharkoarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "wormholesharkoarmor.png",
+    "bootsModelName": "Modelsharkoarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "wormholesharkoarmor.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 1024,
+    "damageValueHelmet": 1024,
+    "damageValueBody": 1024,
+    "damageValueLeggings": 1024,
+    "damageValueBoots": 1024,
+    "enchantability": 14,
+    "toughness": 18.0,
+    "knockbackResistance": 1.5,
+    "equipSound": {
+      "value": "item.armor.equip_netherite"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      }
+    ]
+  }
+}

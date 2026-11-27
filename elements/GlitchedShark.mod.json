@@ -1,0 +1,107 @@
+{
+  "_fv": 79,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "glitchedsharkohelm",
+    "enableBody": true,
+    "textureBody": "glitchedsharkochest",
+    "enableLeggings": true,
+    "textureLeggings": "glitchedsharkoleg",
+    "enableBoots": true,
+    "textureBoots": "glitchedsharkoboot",
+    "onBodyTick": {
+      "name": "CosmicDeathSharkoArmorFullSet"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:AAEItemsItems"
+      }
+    ],
+    "armorTextureFile": "backup_",
+    "helmetName": "Glitched Sharko Helmet",
+    "bodyName": "Glitched Sharko Chestplate",
+    "leggingsName": "Glitched Sharko Leggings",
+    "bootsName": "Glitched Sharko Boots",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Modelsharkoarmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "glitchedsharkoarmor.png",
+    "bodyModelName": "Modelsharkoarmor",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "glitchedsharkoarmor.png",
+    "leggingsModelName": "Modelsharkoarmor",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "glitchedsharkoarmor.png",
+    "bootsModelName": "Modelsharkoarmor",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "glitchedsharkoarmor.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 1024,
+    "damageValueHelmet": 1024,
+    "damageValueBody": 1024,
+    "damageValueLeggings": 1024,
+    "damageValueBoots": 1024,
+    "enchantability": 14,
+    "toughness": 19.0,
+    "knockbackResistance": 1.6,
+    "equipSound": {
+      "value": "item.armor.equip_netherite"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:GlitchedSharkoCloth"
+      }
+    ]
+  }
+}

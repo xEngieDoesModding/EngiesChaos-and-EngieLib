@@ -16,6 +16,7 @@ import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
+import java.util.Comparator;
 import java.util.ArrayList;
 
 import engiegames.engies_chaos.network.EngiesChaosModVariables;
@@ -24,14 +25,12 @@ public class ShadowSharkEngieBlindOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double raytrace_distance = 0;
-		double rx = 0;
-		double ry = 0;
-		double rz = 0;
-		boolean entity_found = false;
 		for (Entity entityiterator : new ArrayList<>(world.players())) {
 			if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(200 / 2d), e -> true).isEmpty()) {
-				entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((entityiterator.getX()), (entityiterator.getY() + 1.5), (entityiterator.getZ())));
+				entity.lookAt(EntityAnchorArgument.Anchor.EYES,
+						new Vec3(((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HHGLookX),
+								((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HHGLookY),
+								((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HHGLookZ)));
 				if ((entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).BlindShadowSharkEngieAttack == false) {
 					if (!(!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(100 / 2d), e -> true).isEmpty())) {
 						if ((entityiterator.getDirection()) == Direction.NORTH) {
@@ -121,7 +120,7 @@ public class ShadowSharkEngieBlindOnEntityTickUpdateProcedure {
 						_entity.getNavigation().moveTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 1);
 					if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(2 / 2d), e -> true).isEmpty()) {
 						{
-							Entity _ent = entityiterator;
+							Entity _ent = (findEntityInWorldRange(world, Player.class, x, y, z, 2));
 							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
 								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
 										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "effect give @s blindness 10 255 true");
@@ -129,9 +128,9 @@ public class ShadowSharkEngieBlindOnEntityTickUpdateProcedure {
 						}
 						{
 							boolean _setval = false;
-							entityiterator.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							(findEntityInWorldRange(world, Player.class, x, y, z, 2)).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.BlindShadowSharkEngieAttack = _setval;
-								capability.syncPlayerVariables(entityiterator);
+								capability.syncPlayerVariables((findEntityInWorldRange(world, Player.class, x, y, z, 2)));
 							});
 						}
 						if (!entity.level.isClientSide())
@@ -142,5 +141,9 @@ public class ShadowSharkEngieBlindOnEntityTickUpdateProcedure {
 				}
 			}
 		}
+	}
+
+	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
+		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

@@ -1,0 +1,53 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "wormholesharkoboots",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      },
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:WormholeSharkoCloth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:WormholeShark.boots"
+    },
+    "name": "wormhole_sharko_boots_craft",
+    "namespace": "mod"
+  }
+}

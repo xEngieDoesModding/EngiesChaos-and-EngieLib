@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aba",
+    "bcb",
+    "dbd"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:orange_dye"
+    },
+    "b": {
+      "item": "engies_chaos:engie_games_tesseract_block"
+    },
+    "c": {
+      "item": "engies_chaos:glitched_sharko_cloth"
+    },
+    "d": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "result": {
+    "item": "engies_chaos:x_engie_sharko_cloth",
+    "count": 1
+  }
+}

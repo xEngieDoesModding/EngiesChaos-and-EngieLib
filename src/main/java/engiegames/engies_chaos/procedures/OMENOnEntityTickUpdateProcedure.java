@@ -10,13 +10,17 @@ import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import java.util.Comparator;
 
+import engiegames.engies_chaos.network.EngiesChaosModVariables;
+
 public class OMENOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(200 / 2d), e -> true).isEmpty()) {
 			entity.lookAt(EntityAnchorArgument.Anchor.EYES,
-					new Vec3(((findEntityInWorldRange(world, Player.class, x, y, z, 300)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 300)).getY() + 1.6), ((findEntityInWorldRange(world, Player.class, x, y, z, 300)).getZ())));
+					new Vec3((((findEntityInWorldRange(world, Player.class, x, y, z, 300)).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HHGLookX),
+							(((findEntityInWorldRange(world, Player.class, x, y, z, 300)).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HHGLookY),
+							(((findEntityInWorldRange(world, Player.class, x, y, z, 300)).getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EngiesChaosModVariables.PlayerVariables())).HHGLookZ)));
 			if (!(!world.getEntitiesOfClass(Player.class, new AABB(Vec3.ZERO, Vec3.ZERO).move(new Vec3(x, y, z)).inflate(50 / 2d), e -> true).isEmpty())) {
 				if (entity instanceof Mob _entity)
 					_entity.getNavigation().moveTo(((findEntityInWorldRange(world, Player.class, x, y, z, 300)).getX()), ((findEntityInWorldRange(world, Player.class, x, y, z, 300)).getY()),
