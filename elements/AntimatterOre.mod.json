@@ -134,7 +134,13 @@
     "onBlockAdded": {
       "name": "MainOreChecks"
     },
+    "onNeighbourBlockChanges": {
+      "name": "MainOreChecks"
+    },
     "onTickUpdate": {
+      "name": "MainOreChecks"
+    },
+    "onStartToDestroy": {
       "name": "MainOreChecks"
     },
     "generateFeature": true,

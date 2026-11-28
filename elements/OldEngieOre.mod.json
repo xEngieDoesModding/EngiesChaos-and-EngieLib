@@ -136,7 +136,13 @@
     "onBlockAdded": {
       "name": "ThrowbackOreChecks"
     },
+    "onNeighbourBlockChanges": {
+      "name": "ThrowbackOreChecks"
+    },
     "onTickUpdate": {
+      "name": "ThrowbackOreChecks"
+    },
+    "onStartToDestroy": {
       "name": "ThrowbackOreChecks"
     },
     "generateFeature": true,

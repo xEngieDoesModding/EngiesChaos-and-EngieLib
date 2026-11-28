@@ -185,7 +185,6 @@ public class EngiesChaosModVariables {
 			clone.TrueHardcoreLifeChangeAmount = original.TrueHardcoreLifeChangeAmount;
 			clone.TrueHardcoreLifeCount = original.TrueHardcoreLifeCount;
 			clone.truehardcorelifesobtained = original.truehardcorelifesobtained;
-			clone.TrueHardcoreMaxLifeCount = original.TrueHardcoreMaxLifeCount;
 			clone.WelcomeBackToggle = original.WelcomeBackToggle;
 			if (!event.isWasDeath()) {
 				clone.firstplay = original.firstplay;
@@ -1396,7 +1395,6 @@ public class EngiesChaosModVariables {
 		public double TrueHardcoreLifeChangeAmount = 0;
 		public double TrueHardcoreLifeCount = 10.0;
 		public boolean truehardcorelifesobtained = false;
-		public double TrueHardcoreMaxLifeCount = 0;
 		public boolean WelcomeBackToggle = false;
 
 		public void syncPlayerVariables(Entity entity) {
@@ -1524,7 +1522,6 @@ public class EngiesChaosModVariables {
 			nbt.putDouble("TrueHardcoreLifeChangeAmount", TrueHardcoreLifeChangeAmount);
 			nbt.putDouble("TrueHardcoreLifeCount", TrueHardcoreLifeCount);
 			nbt.putBoolean("truehardcorelifesobtained", truehardcorelifesobtained);
-			nbt.putDouble("TrueHardcoreMaxLifeCount", TrueHardcoreMaxLifeCount);
 			nbt.putBoolean("WelcomeBackToggle", WelcomeBackToggle);
 			return nbt;
 		}
@@ -1649,7 +1646,6 @@ public class EngiesChaosModVariables {
 			TrueHardcoreLifeChangeAmount = nbt.getDouble("TrueHardcoreLifeChangeAmount");
 			TrueHardcoreLifeCount = nbt.getDouble("TrueHardcoreLifeCount");
 			truehardcorelifesobtained = nbt.getBoolean("truehardcorelifesobtained");
-			TrueHardcoreMaxLifeCount = nbt.getDouble("TrueHardcoreMaxLifeCount");
 			WelcomeBackToggle = nbt.getBoolean("WelcomeBackToggle");
 		}
 	}
@@ -1793,7 +1789,6 @@ public class EngiesChaosModVariables {
 					variables.TrueHardcoreLifeChangeAmount = message.data.TrueHardcoreLifeChangeAmount;
 					variables.TrueHardcoreLifeCount = message.data.TrueHardcoreLifeCount;
 					variables.truehardcorelifesobtained = message.data.truehardcorelifesobtained;
-					variables.TrueHardcoreMaxLifeCount = message.data.TrueHardcoreMaxLifeCount;
 					variables.WelcomeBackToggle = message.data.WelcomeBackToggle;
 				}
 			});

@@ -8,11 +8,10 @@
     "texture": "oldengiaxe",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
+    "guiTexture": "",
     "name": "Engi Axe",
     "specialInformation": {
-      "fixedValue": [
-        "Easter Egg"
-      ]
+      "fixedValue": []
     },
     "creativeTabs": [
       {
@@ -24,6 +23,9 @@
     "enchantability": 2,
     "damageVsEntity": 50.0,
     "usageCount": 750,
+    "glowCondition": {
+      "fixedValue": false
+    },
     "repairItems": [
       {
         "value": "CUSTOM:EngieGem"

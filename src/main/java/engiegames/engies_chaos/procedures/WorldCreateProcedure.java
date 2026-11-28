@@ -37,13 +37,6 @@ public class WorldCreateProcedure {
 					});
 				}
 				{
-					double _setval = (world.getLevelData().getGameRules().getInt(EngiesChaosModGameRules.TRUE_HARDCORE_LIFE_COUNT));
-					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.TrueHardcoreMaxLifeCount = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
 					boolean _setval = true;
 					entity.getCapability(EngiesChaosModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.truehardcorelifesobtained = _setval;
